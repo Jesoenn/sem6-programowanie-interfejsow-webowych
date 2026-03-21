@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang = "pl">
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sklep Plagro</title>
+        <link rel = "stylesheet" href = "style.css"/>
+    </head>
+    <body>
+        <header class="top-bar">
+            <h1>Plagro</h1>
+            <button class="top-bar-btn">Zaloguj się</button>
+            <button class="top-bar-btn">Wyloguj się</button>
+            <button class="top-bar-btn">Koszyk</button>
+        </header>
+
+        <main>
+            <section class="filter-card">
+                <form>
+                    <label for="game-desc"> Opis:</label>
+                    <input type="text" id="game-desc" class="filter-input" placeholder="Czego szukasz?"/>
+
+                    <label for="game-genre">Gatunek: </label>
+                    <select id="game-genre", class="filter-input">
+                        <option>Wszystkie</option>
+                        <option>Strategiczne</option>
+                        <option>Przygodowe</option>
+                        <option>Imprezowe</option>
+                        <option>Logiczne</option>
+                    </select>
+                    
+                    <label for="game-price">Cena maksymalna:</label>
+                    <input type="number" id="game-price" class="filter-input" min="0"/>
+                    
+                    <label for="game-players">Ilość graczy:</label>
+                    <input type="number" id="game-players" class="filter-input" min="1">
+
+                    <label for="game-publisher">Wydawnictwo:</label>
+                    <input type="text" id="game-publisher" class="filter-input">
+
+                    <label for="game-duration">Czas gry (min):</label>
+                    <input type="number" id="game-duration" class="filter-input" min="0">
+
+                    <button class="filter-btn">Szukaj</button>
+                    <button class="filter-btn" id="add-position" type="button" onclick="window.location.href='index2.html'">Dodaj pozycję</button>
+                </form>
+            </section>
+
+            <section class="game-list">
+                <h2>Lista gier</h2>
+                <ul>
+                    <li>
+                        <h3>Talisman</h3>
+                        <p>Gatunek: Strategiczne</p>
+                        <p>Opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mi vestibulum, lobortis nisi id, scelerisque urna. Fusce eu mauris non risus maximus gravida eleifend eget mauris.</p>
+                        <p>Ilość graczy: 2-4</p>
+                        <p>Czas gry: 60-90 min</p>
+                        <p>Wydawnictwo: Fantasy Games</p>
+                        <p>Cena: 120 zł</p>
+                        <button class="cart-btn">Dodaj do koszyka</button>
+                    </li>
+                    <li>
+                        <h3>Dungeons and Dragons 5th edition</h3>
+                        <p>Gatunek: Przygodowe</p>
+                        <p>Opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mi vestibulum, lobortis nisi id, scelerisque urna. Fusce eu mauris non risus maximus gravida eleifend eget mauris.</p>
+                        <p>Ilość graczy: 4-6</p>
+                        <p>Czas gry: 120-600 min</p>
+                        <p>Wydawnictwo: Wizards of the Coast</p>
+                        <p>Cena: 250 zł</p>
+                        <button class="cart-btn">Dodaj do koszyka</button>
+                    </li>
+                    <li>
+                        <h3>Szachy</h3>
+                        <p>Gatunek: Strategiczne</p>
+                        <p>Opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mi vestibulum, lobortis nisi id, scelerisque urna. Fusce eu mauris non risus maximus gravida eleifend eget mauris.</p>
+                        <p>Ilość graczy: 2</p>
+                        <p>Czas gry: 1-90 min</p>
+                        <p>Wydawnictwo: Chess Masters</p>
+                        <p>Cena: 110 zł</p>
+                        <button class="cart-btn">Dodaj do koszyka</button>
+                    </li>
+                    <li>
+                        <h3>UNO</h3>
+                        <p>Gatunek: Imprezowe</p>
+                        <p>Opis: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mi vestibulum, lobortis nisi id, scelerisque urna. Fusce eu mauris non risus maximus gravida eleifend eget mauris.</p>
+                        <p>Ilość graczy: 2-10</p>
+                        <p>Czas gry: 15-60 min</p>
+                        <p>Wydawnictwo: Mattel</p>
+                        <p>Cena: 30 zł</p>
+                        <button class="cart-btn">Dodaj do koszyka</button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
