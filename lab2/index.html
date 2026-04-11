@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo Lista</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>ToDo Lista</h1>
+  </header>
+
+  <main>
+    <section class="todo-panel">
+      <label class="todo-label">Wyszukaj</label>
+      <div class="todo-search">
+        <input type="text" id="todo-search-input" placeholder="Szukaj..."/>
+
+        <label for="todo-search-checkbox">Ignoruj wielkość liter: </label>
+        <input type="checkbox" id="todo-search-checkbox"/>
+      </div>
+      
+      <label class="todo-label">Dodaj zadanie</label>
+      <div class="todo-input">
+        <input type="text" id="todo-desc" placeholder="Treść zadania"/>
+
+        <label for="todo-select">Wybór listy: </label>
+        <select id="todo-select">
+            <option>Mało pilne</option>
+            <option>Pilne</option>
+            <option>Na wczoraj</option>
+        </select>
+      </div>
+
+      <div class="todo-btns">
+        <button class="todo-btn" id="todo-add-btn" type="button" onclick="addItem()" >Dodaj zadanie</button>
+        <button class="todo-btn" id="todo-undo" type="button" onclick = "undoDelete()">Cofnij usunięcie</button> 
+      </div>
+
+      
+    </section>
+
+    <section class="todo-lists">
+      <section class="todo-list" id="list-na-wczoraj">
+        <h2>Na wczoraj</h2>
+        <ul id="ul-na-wczoraj">
+          
+        </ul>
+      </section>
+
+      <section class="todo-list" id="list-pilne">
+        <h2>Pilne</h2>
+        <ul id="ul-pilne">
+          
+        </ul>
+      </section>
+
+      <section class="todo-list" id="list-malo-pilne">
+        <h2>Mało pilne</h2>
+        <ul id="ul-malo-pilne">
+          
+        </ul>
+      </section>
+    </section>
+
+    <!-- Dialog obsługuje zachowanie modala -->
+    <dialog id="todo-modal">
+      <h3>Czy na pewno chcesz usunąć zadanie o treści: <span id="modal-task-desc"></span>?</h3>
+      <!--
+      method="dialog" - auto-magiczny atrybut
+      Sprawia że <button type="submit"> wewnątrz
+      automatycznie ZAMYKA dialog. Zero JavaScriptu!
+    -->
+      <form method="dialog">
+        <button type="submit" class="todo-btn" id="confirm-delete" onclick="removeItem()">Potwierdź</button>
+        <button type="submit" class="todo-btn">Anuluj</button>
+      </form>
+    </dialog>
+
+  </main>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
