@@ -1,10 +1,12 @@
 "use client";
+import {use} from "react"
 import Link from "next/link";
 import Image from "next/image";
 import { useGamesContext } from "../../GamesContext";
 
 export default function GameDetail({ params }) {
-  const gameId = params.id;
+  const usedParams = use(params);
+  const gameId = usedParams.id;
   const {games} = useGamesContext();
 
   const game = games.find((g) => g.id.toString() === gameId) || null;
