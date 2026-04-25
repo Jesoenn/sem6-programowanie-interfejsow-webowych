@@ -1,0 +1,415 @@
+:root {
+  --top-bar-bg: rgb(212, 129, 21);
+  --top-bar-btn-hover-bg: rgb(255,255,255,1);
+  --top-bar-btn-bg: rgba(255, 255, 255, 0.9);
+  --top-bar-btn-text: #d35400;
+
+  --border-color: #ddd;
+
+  --bg: rgb(248, 249, 250);
+  --bg-text: #2c3e50;
+
+  --btn-radius: 8px;
+  --radius : 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--bg-text);
+}
+
+/* ===== PASEK MENU ===== */
+.top-bar {
+  background-color: var(--top-bar-bg);
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: flex-end; 
+  gap: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.top-bar h1 {
+  margin-right: auto;
+  font-family: sans-serif;
+  color: white;
+  margin-left: 1rem;
+}
+
+.top-bar-btn {
+  background-color: var(--top-bar-btn-bg);
+  color: var(--top-bar-btn-text);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--btn-radius);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.top-bar-btn:hover {
+  background-color: var(--top-bar-btn-hover-bg);
+}
+
+/* ===== FILTRY ===== */
+.filter-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem 2.5rem;
+  background-color: white;
+  margin: 1rem 2rem;
+  padding: 1.5rem 4rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  align-items: center;
+}
+
+.filter-card label {
+  font-size: 0.95rem;         
+  font-weight: 550;     
+  text-transform: uppercase;
+  letter-spacing: 1px;          
+  color: var(--top-bar-bg);    
+  padding-left: 1rem;           
+}
+
+.filter-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: var(--top-bar-bg);
+}
+
+.filter-btn {
+  background-color: var(--top-bar-bg);
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;       
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+}
+
+.filter-btn#add-position {
+  background-color: #555;
+}
+
+.filter-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* ===== LISTA GIER ===== */
+.game-list {
+  margin: 2rem;
+}
+
+.game-list h2 {
+  font-family: sans-serif;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.game-list ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.game-list li {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+.game-list li:hover {
+  transform: translateY(-5px); 
+}
+
+.game-list h3 {
+  color: var(--top-bar-bg);
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.cart-btn {
+  background-color: var(--top-bar-bg);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  margin-top: 1.5rem; 
+  border-radius: var(--btn-radius);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* ===== SEKCJA WPROWADZANIA POZYCJI ===== */
+.newgame-card {
+  background-color: white;
+  margin: 2rem auto;
+  max-width: 50%; 
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.newgame-card h2 {
+  text-align: center;
+  color: var(--top-bar-bg);
+  padding-bottom: 2rem;
+  font-family: sans-serif;
+}
+
+.newgame-card form {
+  display: flex;      
+  flex-direction: column;
+}
+
+.newgame-card label {
+  font-size: 0.95rem;         
+  font-weight: bold;       
+  margin-bottom: 0.6rem;       
+  color: var(--bg-text);    
+}
+
+.newgame-card .filter-input {          
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.newgame-card textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.newgame-btn {
+  background-color: var(--top-bar-bg);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--btn-radius);
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.newgame-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* ===== WIDOK SZCZEGÓŁÓW GRY ===== */
+
+.game-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0rem 4rem 1rem 4rem;
+}
+
+.back-btn {
+  margin-right: auto;
+  text-decoration: none;
+  background-color: var(--top-bar-bg);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  margin-top: 1.5rem; 
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  filter: brightness(1.05);
+}
+
+.back-btn a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.game-detail-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.game-detail-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.game-detail-gallery img {
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.game-detail-purchase-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.game-detail-price {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.game-detail-price .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.game-detail-auction {
+  background-color: #fff8f0;
+  border: 2px solid var(--top-bar-bg);
+  padding: 1.5rem;
+  border-radius: var(--btn-radius);
+}
+
+.game-detail-auction h3 {
+  color: var(--top-bar-bg);
+  margin-bottom: 0.8rem;
+}
+
+.game-detail-auction p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.game-detail-parameters {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.game-detail-parameters h3 {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.game-detail-parameters ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.game-detail-description {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.game-detail-description h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.game-detail-description p {
+  margin-bottom: 1rem;
+}
+
+/* ===== PAGINACJA ===== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.page-btn {
+  background-color: var(--top-bar-bg);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--btn-radius);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.page-btn:hover {
+  filter: brightness(1.1);
+}
+
+.page-btn:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+/* ===== WIDOK MOBILNY ===== */
+@media (max-width: 990px) {
+  .game-detail-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .game-detail-parameters ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-card form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    row-gap: 0.3rem;
+    padding: 1rem;
+  }
+
+  .filter-card label {
+    padding-left: 0;
+  }
+
+  .filter-btn {
+    grid-column: span 2; 
+    margin-left: 0;
+  }
+
+  .game-list ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .newgame-card {
+    max-width: 90%; 
+  }
+  
+}
